@@ -1,0 +1,74 @@
+
+
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="submission-title">
+    482955 - Coder: <a href="/Coder/Details/lequocanh123">lequocanh123</a> - Bài tập: <a href="/Problem/Details/5743">Thay thế x&#226;u</a> - <span>Accepted</span> - Time: <span>0 ms</span> - Memory: <span>1104 KB </span> 
+        <a href="/Submission/Detail/482955/?fullScreen=1"><span class="red">(full screen)</span></a>
+</div>
+<div>
+    <textarea id="SubmitCode" rows="44" cols="125">// Code by L4ADEVELOPER - 9A2 THCS NGUYEN TRAI
+#include&lt;bits/stdc++.h&gt;
+/* Weird Define */
+#define mod 1000000007
+#define nmax 10000007
+#define fi(s) freopen(s , &quot;r&quot; ,stdin);
+#define fop(s) freopen(s , &quot;w&quot; , stdout);
+#define ll long long
+#define FASTER ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define el cout &lt;&lt; &#39;\n&#39;;
+/* Some Const */
+const double PI = 3.141592653589793;
+const long long MIN = LONG_LONG_MIN;
+const long long MAX = LONG_LONG_MAX;
+/* Function :)) */
+ll gt(ll n)  { if(n == 0) return 1; if(n &gt;= 2) return n * gt(n - 1);}
+bool Prime(ll n) {for(int i = 2 ; i &lt;= sqrt(n) ; i++) {if(n % i == 0) return false;} return n &gt; 1;}
+bool Binary_Search(ll a[] , ll n , ll x) {ll l = 1 , r = n ; while(l &lt;= r) {ll mid = (l + r) / 2; if(a[mid] == x) return true ; else if(a[mid] &gt; x ) r = mid - 1; else l = mid + 1;} return false;}
+ll pow(ll a , ll n) { if(n == 0) return 1 ; ll tam = pow(a , n / 2) ; tam = (tam * tam); if(n % 2 == 1) tam = (tam * a) ; return tam;}
+using namespace std;
+string s[100005];
+ll cnt = 0 ;
+/* Singed Main :33 */
+signed main()
+{
+	FASTER;
+	for(int i = 1 ; i &lt;= 3 ; i++)
+	{
+		getline(cin , s[i]);
+	}
+	ll x = s[1].size() , y = s[2].size() , z = s[3].size();
+	for(int i = 0 ; i &lt; x - y + 1 ; i++)
+	{
+		if(s[1].substr(i , y) == s[2])
+		{
+			s[1].replace(i , y , s[3]);
+		}
+	}
+	cout &lt;&lt; s[1] &lt;&lt; &quot; &quot; ;
+}
+//Code Your Dream
+    </textarea>
+</div>
+
+   
+<script type="text/javascript">
+        editAreaLoader.init({
+            id: "SubmitCode",
+            syntax_selection_allow: "cpp,java,pas,csharp,python",
+            is_editable: false,
+            allow_toggle: false,
+            allow_resize: "no",
+            syntax: "cpp",
+            display: "onload",
+            start_highlight: true
+        });
+</script>
